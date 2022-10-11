@@ -44,10 +44,14 @@ public class ArrayList<E> implements List<E> {
         }
     }
 
+    /**
+     * @param value
+     * @return
+     */
     @Override
-    public boolean add(E value) {
-        addLast(value);
-        return true;
+    public boolean add(Object value) {
+        addLast((E)value);
+        return false;
     }
 
     private void addLast(E value) {
