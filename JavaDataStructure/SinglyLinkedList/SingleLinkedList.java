@@ -1,7 +1,7 @@
 package SinglyLinkedList;
 import Interface.List;
 
-public class SingleLinkedList<E> implements Interface.List {
+public class SingleLinkedList<E> implements List {
 
     private Node<E> head;           //가장 첫 노드를 가리키는 변수
     private Node<E> tail;           //가장 마지막 노드를 가리키는 변수
@@ -35,15 +35,18 @@ public class SingleLinkedList<E> implements Interface.List {
         head = newNode;                         //head는 이제부터 newNode가된다
         size++;
 
-        if(head == null)                        //만약 리스트가 비어있으면
-            tail = head;                        //tail이 곧 head
+        if(head.next == null) {
+            tail = head;
+        }
     }
 
     //리스트에 끝에 요소를 추가
     public void addLast(E value) {
         Node<E> newNode = new Node<>(value);    //새 노드 생성
-        if(size == 0)                           //만약 노드가 비어있따면
+        if (size == 0) {                        //만약 노드가 비어있따면
             addFirst(value);                    //앞서구현했던 addFirst메서드 호출
+            return;
+        }
 
         tail.next = newNode;                    //현재의 tail이 newNode를 가리키게 해줌
         tail = newNode;                         //tail은 이제부터 newNode다
@@ -52,8 +55,8 @@ public class SingleLinkedList<E> implements Interface.List {
 
     @Override
     public boolean add(Object value) {
-        addLast((E) value);
-        return false;
+        addLast((E)value);
+        return true;
     }
 
     //특정 인덱스에 요소 삽입.
@@ -135,11 +138,72 @@ public class SingleLinkedList<E> implements Interface.List {
      * 2. true :  remove(int index)
      * 3. false : false;
      */
+
     @Override
     public boolean remove(Object value) {
         boolean isNode = false;
-        Node<E> prevNode = head;
+        Node<E> x = head;
 
-        while()
+        for(; x != null; x = x.next) {
+            if(value.equals(x.data)) {
+                isNode = true;
+                remove(x.next);
+                break;
+            }
+        }
+        if(x == null)
+            isNode = false;
+
+        return isNode;
+    }
+
+    @Override
+    public E get(int index) {
+        return search(index).data;      //예외 필요없음 (search 내부에서 예외떤져줌)
+    }
+
+    @Override
+    public void set(int index, Object value) {
+        Node<E> setNode = search(index);
+        setNode.data = null;            //그냥 해줌(직관적이자낭)
+        setNode.data = (E)value;
+    }
+
+    @Override
+    public boolean contains(Object value) {
+        if(indexOf(value) == 1)
+            return true;
+
+        return false;
+    }
+
+    @Override
+    public int indexOf(Object value) {
+
+        for(Node<E> x = head; x != null; x = x.next) {
+            if(value.equals(x.data))
+                return 1;
+        }
+        return -1;
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public void clear() {
+        for(Node<E> x = head; x != null; x = x.next) {
+            x.data = null;
+            x.next = null;
+        }
+        head = tail = null;
+        size = 0;
     }
 }
