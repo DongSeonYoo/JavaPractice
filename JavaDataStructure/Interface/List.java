@@ -2,9 +2,9 @@ package Interface;
 
 public interface List<E> {
 
-    boolean add(E value);           //리스트에 요소를 추가.     value가 리스트에 이미 존재할 경우엔 false 반환, else true
+    public boolean add(E value);           //리스트에 요소를 추가.     value가 리스트에 이미 존재할 경우엔 false 반환, else true
 
-    void add(int index, E value);   //firstParam(index) 에 secondParam(value)를 삽입.
+    public void add(int index, E value);   //firstParam(index) 에 secondParam(value)를 삽입.
 
     E remove(int index);            //firstParam(index)위치에 있는 요소를 삭제 후 삭제된 요소를 반환함.
 
