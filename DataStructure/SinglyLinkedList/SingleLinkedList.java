@@ -2,7 +2,6 @@ package SinglyLinkedList;
 import Interface.List;
 
 public class SingleLinkedList<E> implements List {
-
     private Node<E> head;           //가장 첫 노드를 가리키는 변수
     private Node<E> tail;           //가장 마지막 노드를 가리키는 변수
     private int size;               //리스트에 요소의 개수
