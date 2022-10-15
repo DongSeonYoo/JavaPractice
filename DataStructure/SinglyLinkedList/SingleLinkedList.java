@@ -53,9 +53,8 @@ public class SingleLinkedList<E> implements List {
     }
 
     @Override
-    public boolean add(Object value) {
+    public void add(Object value) {
         addLast((E)value);
-        return true;
     }
 
     //특정 인덱스에 요소 삽입.
