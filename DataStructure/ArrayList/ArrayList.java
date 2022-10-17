@@ -46,9 +46,10 @@ public class ArrayList<E> implements List<E> {
 
     /**
      * @param value
+     * @return
      */
     @Override
-    public void add(Object value) {
+    public boolean add(Object value) {
         addLast((E)value);
         return false;
     }
@@ -84,7 +85,6 @@ public class ArrayList<E> implements List<E> {
         }
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public E remove(int index) {
         if(index >= size || index < 0) {
