@@ -28,6 +28,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "이름 : " + this.name + "나이 : " + this.age;
+        return "이름 : " + this.name + " 나이 : " + this.age;
     }
 }
