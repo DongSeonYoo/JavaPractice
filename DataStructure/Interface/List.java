@@ -1,7 +1,7 @@
 package Interface;
 
 public interface List<E> {
-    public void add(E value);           //리스트에 요소를 추가.
+    public boolean add(E value);           //리스트에 요소를 추가.
 
     public void add(int index, E value);   //firstParam(index) 에 secondParam(value)를 삽입.
 
