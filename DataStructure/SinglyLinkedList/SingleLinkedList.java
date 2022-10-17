@@ -53,8 +53,9 @@ public class SingleLinkedList<E> implements List {
     }
 
     @Override
-    public void add(Object value) {
+    public boolean add(Object value) {
         addLast((E)value);
+        return false;
     }
 
     //특정 인덱스에 요소 삽입.
@@ -105,6 +106,8 @@ public class SingleLinkedList<E> implements List {
      * @param index
      * @return
      */
+
+    @Override
     public E remove(int index) {
         //예외처리부터
         if(index < 0 || index < size)
