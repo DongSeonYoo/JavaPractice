@@ -2,7 +2,7 @@ package TestPackage;
 
 import SinglyLinkedList.SingleLinkedList;
 
-public class Test {
+public class SingleLinkedListTest {
     public static void main(String[] args) {
         SingleLinkedList<Student> studentList = new SingleLinkedList<>();
 
