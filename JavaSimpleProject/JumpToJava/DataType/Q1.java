@@ -1,3 +1,5 @@
+package DataType;
+
 public class Q1 {
      //01. 홍길동 씨의 과목별 점수는 각각 다음과 같다. 홍길동 씨의 평균 점수를 구해 보자.
     public static void main(String[] args) {

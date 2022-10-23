@@ -1,3 +1,5 @@
+package DataType;
+
 import java.util.*;
 
 public class Q9 {

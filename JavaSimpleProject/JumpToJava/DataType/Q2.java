@@ -1,3 +1,5 @@
+package DataType;
+
 public class Q2 {
      // 02. 자연수 13이 홀수인지 짝수인지 판별할 수 있는 방법에 대해서 말해 보자.
     public static String isOddNum(int num) {

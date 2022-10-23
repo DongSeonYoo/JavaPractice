@@ -1,3 +1,5 @@
+package DataType;
+
 import java.util.HashMap;
 
 public class Q8 {
